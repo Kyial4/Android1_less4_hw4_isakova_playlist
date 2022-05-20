@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ public class SecondFragment extends Fragment  implements onItemClick {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.container_playlist);
         loadData();
-        PlaylistAdapter adapter=new PlaylistAdapter(playlist);
+        PlaylistAdapter adapter=new PlaylistAdapter(playlist, this);
         recyclerView.setAdapter(adapter);
 
     }
@@ -54,11 +55,13 @@ public class SecondFragment extends Fragment  implements onItemClick {
     }
 
 
+
     @Override
-    public void onItemClick(Playlist playlist) {
-        Intent intent=new Intent();
+    public void onClick(Playlist playlist) {
+        Intent intent=new Intent(requireActivity(),SecondActivity.class);
         intent.putExtra("text",playlist.getSong());
         startActivity(intent);
-
+        Toast.makeText(getActivity(), "UPS  ",
+                Toast.LENGTH_LONG).show();
     }
 }

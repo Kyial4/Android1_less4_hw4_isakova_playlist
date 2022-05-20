@@ -1,5 +1,6 @@
 package com.geektech.android1_less4_hw4_isakova;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,23 +13,28 @@ import java.util.ArrayList;
 
 public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.PlaylistViewHolder> {
     private ArrayList<Playlist> playlist = new ArrayList<>();
+    private onItemClick onItemClick;
 
-    public PlaylistAdapter(ArrayList<Playlist> playlist) {
+    public PlaylistAdapter(ArrayList<Playlist> playlist,onItemClick onItemClick) {
         this.playlist = playlist;
+        this.onItemClick=onItemClick;
     }
 
     @NonNull
     @Override
     public PlaylistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new PlaylistViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_playlist1, parent, false));
+        return new
+                PlaylistViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_playlist1,
+                parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlaylistViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PlaylistViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.bind(playlist.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                onItemClick.onClick(playlist.get(position));
 
             }
         });
@@ -53,7 +59,7 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
 
         public void bind(Playlist playlist) {
             song.setText(playlist.getSong());
-            singer.setText(playlist.getSing());
+            singer.setText(playlist.getSinger());
         }
     }
 }

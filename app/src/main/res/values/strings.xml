@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Android1_less4_hw4_isakova</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="now_playing">Now playing</string>
+    <string name="name_of_song">Talk Me Down</string>
+    <string name="name_of_sing">Blue Neighbourhood</string>
+    <string name="singer1">Artik and Asti</string>
+    <string name="singer2">Ирина Дубцова</string>
+    <string name="singer3">Ed Sheeran</string>
+    <string name="singer4">Дима Билан</string>
+    <string name="singer5">Hamai and Navai</string>
+    <string name="singer6">Artik and Asti</string>
+    <string name="singer7">Ирина Дубцова</string>
+    <string name="singer8">Ed Sheeran</string>
+    <string name="singer9">Дима Билан</string>
+    <string name="singer10">Мирбек Атабеков</string>
+    <string name="song1">Чувства</string>
+    <string name="song2">Под дождем</string>
+    <string name="song3">Photograh</string>
+    <string name="song4">Эта была любовь</string>
+    <string name="song5">Раз,два, три кавычки</string>
+    <string name="song6">Под гипнозом</string>
+    <string name="song7">Чувства</string>
+    <string name="song8">Под дождем</string>
+    <string name="song9">Photograh</string>
+    <string name="song10">Эта была любовь</string>
+
+</resources>
